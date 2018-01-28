@@ -24,7 +24,7 @@ try:
 except ImportError:
     import httplib
 import base64
-import json
+import simplejson as json
 import decimal
 try:
     import urllib.parse as urlparse
