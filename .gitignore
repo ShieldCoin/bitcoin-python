@@ -3,4 +3,4 @@
 sphinx/build
 build
 dist
-src/bitcoin_python.egg-info
+src/shield_python.egg-info

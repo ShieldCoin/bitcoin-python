@@ -1,8 +1,7 @@
-:mod:`bitcoinrpc.connection` --- Connect to Bitcoin server via JSON-RPC
+:mod:`shieldrpc.data` --- shield RPC service, data objects
 ====================================================================================
 
-.. automodule:: bitcoinrpc.connection
+.. automodule:: shieldrpc.data
    :members:
    :show-inheritance:
-
-
+   

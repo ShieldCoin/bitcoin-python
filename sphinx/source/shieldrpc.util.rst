@@ -1,7 +1,7 @@
-:mod:`bitcoinrpc.data` --- Bitcoin RPC service, data objects
+:mod:`shieldrpc.util` --- Generic utilities used by shield client library
 ====================================================================================
 
-.. automodule:: bitcoinrpc.data
+.. automodule:: shieldrpc.util
    :members:
    :show-inheritance:
    

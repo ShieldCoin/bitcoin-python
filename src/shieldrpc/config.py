@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 """
-Utilities for reading bitcoin configuration files.
+Utilities for reading shield configuration files.
 """
 
 
@@ -46,7 +46,7 @@ def read_config_file(filename):
 
 def read_default_config(filename=None):
     """
-    Read bitcoin default configuration from the current user's home directory.
+    Read shield default configuration from the current user's home directory.
 
     Arguments:
 
@@ -60,9 +60,9 @@ def read_default_config(filename=None):
             raise IOError("Home directory not defined, don't know where to look for config file")
 
         if platform.system() == "Darwin":
-            location = 'Library/Application Support/Bitcoin/bitcoin.conf'
+            location = 'Library/Application Support/shield/shield.conf'
         else:
-            location = '.bitcoin/bitcoin.conf'
+            location = '.shield/shield.conf'
         filename = os.path.join(home, location)
 
     elif filename.startswith("~"):

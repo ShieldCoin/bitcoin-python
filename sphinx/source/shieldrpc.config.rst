@@ -1,7 +1,7 @@
-:mod:`bitcoinrpc.exceptions` --- Exception definitions
+:mod:`shieldrpc.config` --- Utilities for reading shield configuration files
 ====================================================================================
 
-.. automodule:: bitcoinrpc.exceptions
+.. automodule:: shieldrpc.config
    :members:
    :show-inheritance:
-      
+   

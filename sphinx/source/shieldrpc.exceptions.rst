@@ -1,7 +1,7 @@
-:mod:`bitcoinrpc` --- Convenience functions
+:mod:`shieldrpc.exceptions` --- Exception definitions
 ====================================================================================
 
-.. automodule:: bitcoinrpc
+.. automodule:: shieldrpc.exceptions
    :members:
    :show-inheritance:
       

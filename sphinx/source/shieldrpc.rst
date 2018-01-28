@@ -1,7 +1,7 @@
-:mod:`bitcoinrpc.util` --- Generic utilities used by bitcoin client library
+:mod:`shieldrpc` --- Convenience functions
 ====================================================================================
 
-.. automodule:: bitcoinrpc.util
+.. automodule:: shieldrpc
    :members:
    :show-inheritance:
-   
+      

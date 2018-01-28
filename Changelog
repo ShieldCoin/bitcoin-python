@@ -88,7 +88,7 @@
 
 2012-10-28 23:25:25 +0100 Harald Schilly 
 
-	* optionally allow to pass in the path to the bitcoin.conf file if it is at a non-standard path
+	* optionally allow to pass in the path to the shield.conf file if it is at a non-standard path
 
 2012-10-28 21:52:48 +0100 Harald Schilly 
 
@@ -104,7 +104,7 @@
 
 2012-10-05 18:32:23 +0200 Wladimir J. van der Laan 
 
-	* Use RPC error codes from bitcoin core source
+	* Use RPC error codes from shield core source
 
 2012-07-15 12:07:53 +0400 Alexander Petrovich 
 
@@ -128,8 +128,8 @@
 
 	* Add Changelog
 
-	* Rename package to 'bitcoinrpc' instead of 'bitcoin', makes more sense as this is a RPC
-	  client not a bitcoin client implementation.
+	* Rename package to 'shieldrpc' instead of 'shield', makes more sense as this is a RPC
+	  client not a shield client implementation.
 
 	* Add COPYING (MIT license)
 

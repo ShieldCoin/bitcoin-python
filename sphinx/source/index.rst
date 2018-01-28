@@ -1,9 +1,9 @@
 ==================================================
- bitcoin-python - Easy-to-use Bitcoin API client.
+ shield-python - Easy-to-use shield API client.
 ==================================================
 
-``bitcoin-python`` is a set of Python libraries that allows easy access to the
-bitcoin_ peer-to-peer cryptocurrency client API.
+``shield-python`` is a set of Python libraries that allows easy access to the
+shield_ peer-to-peer cryptocurrency client API.
 
 Contents:
 
@@ -20,5 +20,5 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-.. _bitcoin: https://www.bitcoin.org/
+.. _shield: https://www.shield.org/
 

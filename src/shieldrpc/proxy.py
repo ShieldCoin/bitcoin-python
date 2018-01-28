@@ -31,7 +31,7 @@ try:
 except ImportError:
     import urlparse # python2
 from collections import defaultdict, deque
-from bitcoinrpc.exceptions import TransportException
+from shieldrpc.exceptions import TransportException
 
 USER_AGENT = "AuthServiceProxy/0.1"
 
@@ -76,7 +76,7 @@ class HTTPTransport(object):
                 # http://stackoverflow.com/questions/1925639/httplib-cannotsendrequest-error-in-wsgi
                 # How to recreate an error:
                 # btc.gettransaction('9d56c0b49419815ea4cbef3f6f237132de54ab79d9c990e6c4446551f71c32c7')
-                # stop bitcoind
+                # stop shieldd
                 # btc.gettransaction('9d56c0b49419815ea4cbef3f6f237132de54ab79d9c990e6c4446551f71c32c7')
                 # now it raises an error
                 # after btc.proxy._transport.connection.close()
@@ -90,7 +90,7 @@ class HTTPTransport(object):
             self._raise_exception({
                 'code': -342, 'message': 'missing HTTP response from server'})
         elif httpresp.status == httplib.FORBIDDEN:
-            msg = "bitcoind returns 403 Forbidden. Is your IP allowed?"
+            msg = "shieldd returns 403 Forbidden. Is your IP allowed?"
             raise TransportException(msg, code=403,
                                      protocol=self.parsed_url.scheme,
                                      raw_detail=httpresp)

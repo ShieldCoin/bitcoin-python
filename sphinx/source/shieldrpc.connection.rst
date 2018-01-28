@@ -1,7 +1,8 @@
-:mod:`bitcoinrpc.config` --- Utilities for reading bitcoin configuration files
+:mod:`shieldrpc.connection` --- Connect to shield server via JSON-RPC
 ====================================================================================
 
-.. automodule:: bitcoinrpc.config
+.. automodule:: shieldrpc.connection
    :members:
    :show-inheritance:
-   
+
+
