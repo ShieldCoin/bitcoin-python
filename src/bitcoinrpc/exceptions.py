@@ -222,6 +222,6 @@ def wrap_exception(error):
     Convert a JSON error object to a more specific Bitcoin exception.
     """
     # work around to temporarily fix https://github.com/bitcoin/bitcoin/issues/3007
-    if error['code'] == BitcoinException.WALLET_ERROR and error['message'] == u'Insufficient funds':
+    if error['code'] == BitcoinException.WALLET_ERROR and error['message'] == 'Insufficient funds':
         error['code'] = BitcoinException.WALLET_INSUFFICIENT_FUNDS
     return _exception_map.get(error['code'], BitcoinException)(error)

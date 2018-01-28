@@ -22,14 +22,14 @@
 try:
     import http.client as httplib
 except ImportError:
-    import httplib
+    import httplib # python2
 import base64
 import simplejson as json
 import decimal
 try:
     import urllib.parse as urlparse
 except ImportError:
-    import urlparse
+    import urlparse # python2
 from collections import defaultdict, deque
 from bitcoinrpc.exceptions import TransportException
 
@@ -64,12 +64,26 @@ class HTTPTransport(object):
             self.connection = httplib.HTTPConnection(self.parsed_url.hostname,
                                                      port, False, HTTP_TIMEOUT)
 
-    def request(self, serialized_data):
-        self.connection.request('POST', self.parsed_url.path, serialized_data,
-                                {'Host': self.parsed_url.hostname,
-                                 'User-Agent': USER_AGENT,
-                                 'Authorization': self.auth_header,
-                                 'Content-type': 'application/json'})
+    def request(self, serialized_data, retry=True):
+        try:
+            self.connection.request('POST', self.parsed_url.path, serialized_data,
+                                    {'Host': self.parsed_url.hostname,
+                                    'User-Agent': USER_AGENT,
+                                    'Authorization': self.auth_header,
+                                    'Content-type': 'application/json'})
+        except httplib.CannotSendRequest:
+            if retry:
+                # http://stackoverflow.com/questions/1925639/httplib-cannotsendrequest-error-in-wsgi
+                # How to recreate an error:
+                # btc.gettransaction('9d56c0b49419815ea4cbef3f6f237132de54ab79d9c990e6c4446551f71c32c7')
+                # stop bitcoind
+                # btc.gettransaction('9d56c0b49419815ea4cbef3f6f237132de54ab79d9c990e6c4446551f71c32c7')
+                # now it raises an error
+                # after btc.proxy._transport.connection.close()
+                # it will work again
+                self.connection.close()
+                return self.request(serialized_data, retry=False)
+            raise
 
         httpresp = self.connection.getresponse()
         if httpresp is None:
